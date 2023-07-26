@@ -16,11 +16,11 @@ int main(void)
 	char command[MAX_COMMAND_LEN];
 	const char *prompt = "#cisfun$ ";
 
-	while(1)
+	while (1)
 	{
 		printf("%s", prompt);
 
-		if (fgets(command,MAX_COMMAND_LEN,stdin) == NULL)
+		if (fgets(command, MAX_COMMAND_LEN, stdin) == NULL)
 			break;
 
 		command[strcspn(command, "\n")] = '\0';
@@ -42,6 +42,7 @@ int main(void)
 		{
 			int status;
 			wait(&status);
+
 		}
 	}
 	return (0);

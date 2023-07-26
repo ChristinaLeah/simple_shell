@@ -6,7 +6,7 @@
 /**
  * main - wait and fork example
  *
- * Return: Always 0.
+ * * Return: Always 0.
  */
 int main(void)
 {
@@ -21,13 +21,13 @@ int main(void)
 	}
 	if (child_pid == 0)
 	{
-		printf("wait for me, wait for me\n");
+		printf("Wait for me, wait for me\n");
 		sleep(3);
 	}
 	else
 	{
 		wait(&status);
-		printf("oh,its all better now\n");
+		printf("oh,it's all better now\n");
 	}
-	return(0);
+	return (0);
 }

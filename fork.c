@@ -4,10 +4,9 @@
 /**
  * main -fork example
  *
- *
  * Return: Always 0.
  */
- int main(void)
+int main(void)
 {
 	pid_t my_pid;
 	pid_t pid;
@@ -19,6 +18,7 @@
 		perror("Error:");
 		return (1);
 	}
+
 	printf("After fork\n");
 	my_pid = getpid();
 	printf("my pid is%u\n", my_pid);
