@@ -17,7 +17,7 @@ int main(void)
 	char command[MAX_INPUT_LENGTH];
 	while (1)
 	{
-		printf("cisfun$");
+		printf("#cisfun$ ");
 		if (fgets(command, sizeof(command), stdin) == NULL)
 		{
 			printf("\n");
