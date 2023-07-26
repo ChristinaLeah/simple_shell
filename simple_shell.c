@@ -1,50 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/wait.h>
 #include <string.h>
+#include <sys/wait.h>
 
-#define MAX_COMMAND_LEN 100
+#define MAX_INPUT_LENGTH 100
 
 /**
- * main - super simple shell
+ * main - a UNIX command line interpreter
  *
- * Returns: Always 0
+ * Return: always 0
  */
-int main()
+int main(void)
 {
 	pid_t pid;
-	char command[MAX_COMMAND_LEN];
-	const char *prompt = "#cisfun$ ";
-
+	char command[MAX_INPUT_LENGTH];
 	while (1)
 	{
-		printf("%s", prompt);
-
-		if (fgets(command, MAX_COMMAND_LEN, stdin) == NULL)
+		printf("cisfun$");
+		if (fgets(command, sizeof(command), stdin) == NULL)
+		{
+			printf("\n");
 			break;
+		}
 
-		command[strcspn(command, "\n")] = '\0';
+		command[strcspn(command, "\n")] = '0';
 
 		pid = fork();
 
-		if (pid == -1)
+		if (pid < 0)
 		{
-			perror("fork error");
-			return (1);
+			perror("fork has failed");
+			exit(EXIT_FAILURE);
 		}
 		else if (pid == 0)
 		{
-			execl(command, command, NULL);
-			perror("exec error");
-			exit(1);
+			char *args[2];
+
+			args[0] = command;
+			args[1] = NULL;
+			if (execvp(args[0], args) == -1)
+			{
+				perror("command not found");
+				exit(EXIT_FAILURE);
+			}
 		}
 		else
 		{
 			int status;
-			wait(&status);
 
+			waitpid(pid, &status, 0);
 		}
+
 	}
 	return (0);
 }
