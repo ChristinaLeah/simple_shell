@@ -11,8 +11,9 @@
  *
  * Returns: Always 0
  */
-int main(void)
+int main()
 {
+	pid_t pid;
 	char command[MAX_COMMAND_LEN];
 	const char *prompt = "#cisfun$ ";
 
@@ -25,7 +26,7 @@ int main(void)
 
 		command[strcspn(command, "\n")] = '\0';
 
-		pid_t pid = fork();
+		pid = fork();
 
 		if (pid == -1)
 		{
