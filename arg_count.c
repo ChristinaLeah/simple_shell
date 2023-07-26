@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define UNUSED(argc) int (argc)
+#define UNUSED(*argv) int (*argv)
 
 /**
- *@argv: array of strings
  * main - prints our argument with no argc
- * @argc: argument counts 
+ * @argc: arguemebt count
+ * @argv: arguement vector
  * Return:0
  */
-int main(int argc,char *argv[])
+int main(int argc, char *argv[])
 {
 	int i = 0;
-	while (argv[i]!= NULL);
+
+	while (argv[i] != NULL);
 	{
 		printf("%s\n", argv[i]);
 		i++;

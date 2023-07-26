@@ -10,6 +10,7 @@
 int main(void)
 {
 	char *argv[] = {"/bin/ls", "-1", "/usr/", NULL}
+}
 
 /**
  * main - execve example

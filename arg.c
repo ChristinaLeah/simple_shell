@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define UNUSED(argc) int (argc)
+#define UNUSED(argv) int (argv)
 
 /**
  * main - prints our arguement with no ac
