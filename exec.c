@@ -4,16 +4,6 @@
 
 /**
  * main - execve example
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	char *argv[] = {"/bin/ls", "-1", "/usr/", NULL}
-}
-
-/**
- * main - execve example
  * Return: 0
  */
 

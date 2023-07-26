@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define UNUSED(argc) int (argc)
-#define UNUSED(*argv) int (*argv)
+#define UNUSED(argv) int (argv)
 
 /**
  * main - prints our argument with no argc
@@ -11,6 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
+	UNUSED argc;
 	int i = 0;
 
 	while (argv[i] != NULL);

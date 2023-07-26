@@ -2,18 +2,19 @@
 #include <unistd.h>
 
 /**
- * av -a pointer to an array of strings
- *ac -counts the number of arguments
+ * main - gives an arguement
+ * @argc: arguement count
+ * @argv:an array of strings pointer
  * Return: Always 0
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-        int i = 1;
+	int i = 1;
 
-        while (argv[i] != NULL)
+	while (argv[i] != NULL)
 	{
-                printf("%s\n", av[i]);
-        i++;
+		printf("%s\n", av[i]);
+		i++;
 	}
-        return (0);
+	return (0);
 }

@@ -13,8 +13,9 @@ int main(void)
 	const char *args[] ={command, "-1", "/tmp", NULL};
 
 	int num_children = 5;
+	int i;
 
-	for (int i=0; i < num_children; i++)
+	for (i=0; i < num_children; i++)
 	{
 		pid_t pid =fork();
 

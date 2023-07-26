@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define UNUSED(ac) int (ac)
-#define UNUSED(**av) int (**av)
-#define UNUSED(**env) int (**env)
+#define UNUSED(av) int (av)
+#define UNUSED(env) int (env)
 
 /**
  * main - prints the environment
@@ -14,8 +14,8 @@
 int main(int ac, char **av, char **env)
 {
 	UNUSED(ac);
-	UNUSED(**av);
-	UNUSED(**env);
+	UNUSED(av);
+	UNUSED(env);
 	unsigned int i;
 
 	i = 0;
